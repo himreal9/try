@@ -10,11 +10,13 @@ def con():
     if request.method=='POST':
         if request.form.get("se"):
            o = request.form['ser']
+           a = request.form['ag']
+           n = request.form['no']
            with open('new.json',"r") as f:
                 k=json.load(f)
                 
            with open('new.json',"w") as f:
-                k[o]={'age':23,'no':55}
+                k[o]={'age':a,'no':n}
                 d=json.dumps(k)
                 f.write(d)
                 
